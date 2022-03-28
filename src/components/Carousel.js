@@ -26,7 +26,7 @@ function Carousel(){
       </div>
     </div>
     <div class="carousel-item active">
-      <div class="row">
+      <div class="row center">
       <div class="col ">
       <h1>Find Leading Expert for your Business</h1>
         <p>Some representative placeholder content for the first slide.</p>
