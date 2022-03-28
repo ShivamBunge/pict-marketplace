@@ -3,35 +3,35 @@ import ReactDOM from 'react-dom';
 import '../css/Navbar.css'
 function Carousel(){
     return (
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="row">
-      <div class="col">
+        <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <div className="row">
+      <div className="col">
         <h1>Find Leading Experts for your Business</h1>
         <p>Some representative placeholder content for the first slide.</p>
       </div>
-      <div class="col"><img src="https://static.startuptalky.com/2021/10/Top-Consultancy-Business-Ideas_startuptalky.jpg" class="d-block w-100" alt="..."/>
+      <div className="col"><img src="https://static.startuptalky.com/2021/10/Top-Consultancy-Business-Ideas_startuptalky.jpg" className="d-block w-100" alt="..."/>
       </div>
       </div>
     </div>
-    <div class="carousel-item ">
-      <div class="row">
-      <div class="col">
+    <div className="carousel-item ">
+      <div className="row">
+      <div className="col">
         <h1>Second slide label</h1>
         <p>Some representative placeholder content for the first slide.</p>
       </div>
-      <div class="col"><img src="https://static.startuptalky.com/2021/10/Top-Consultancy-Business-Ideas_startuptalky.jpg" class="d-block w-100" alt="..."/>
+      <div className="col"><img src="https://static.startuptalky.com/2021/10/Top-Consultancy-Business-Ideas_startuptalky.jpg" className="d-block w-100" alt="..."/>
       </div>
       </div>
     </div>
-    <div class="carousel-item active">
-      <div class="row center">
-      <div class="col ">
+    <div className="carousel-item active">
+      <div className="row center">
+      <div className="col ">
       <h1>Find Leading Expert for your Business</h1>
         <p>Some representative placeholder content for the first slide.</p>
       </div>
-      <div class="col"><img src="https://static.startuptalky.com/2021/10/Top-Consultancy-Business-Ideas_startuptalky.jpg" class="d-block w-100" alt="..."/>
+      <div className="col"><img src="https://static.startuptalky.com/2021/10/Top-Consultancy-Business-Ideas_startuptalky.jpg" className="d-block w-100" alt="..."/>
       </div>
       </div>
     </div>
