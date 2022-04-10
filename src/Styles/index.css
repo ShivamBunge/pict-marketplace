@@ -1,19 +1,21 @@
 body {
   margin: 0;
- 
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-*{
-  font-family:'Nunito';
+
+/*Not required */
+/* * {
+  font-family: "Nunito";
   font-weight: 600;
 }
-h1{
-  font-family:'Nunito';
+h1 {
+  font-family: "Nunito";
   font-weight: 600;
-}
+} */
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
