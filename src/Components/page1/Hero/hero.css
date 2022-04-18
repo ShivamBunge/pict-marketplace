@@ -1,1 +1,62 @@
 @import "../../../Styles/App.css";
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@keyframes backgroundColorPalette {
+    0% {
+        background: #00b8a2;
+
+      }
+      /* 25% {
+        background: #60d394;
+      } */
+      /* 50% {
+        background: #aaf683;
+      } */
+      75% {
+        background: #5463ff;
+      }
+      100% {
+        background: #fabb04;
+      }
+  }
+
+  .header {
+  
+     animation-name: backgroundColorPalette;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    /* animation-direction: alternate; */
+    object-fit: contain;
+    height: 110vh;
+    display: flex;
+    /* position: relative; */
+  }
+  .header .heading{
+    font-family: 'Lobster', cursive;  
+    font-size: 2.5rem; 
+
+  }
+ 
+
+  
+.carousel-item {
+ 
+    background: no-repeat center center scroll;
+  }
+  .row {
+    padding: 200px 30px;  
+    display: flex;  
+    color: black;
+  }
+  .col {
+    float: left;
+    justify-content: center;
+    align-items: center;
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  
