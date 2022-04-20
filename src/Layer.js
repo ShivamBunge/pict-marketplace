@@ -10,6 +10,7 @@ const Layer = () => {
     <div>
       <Navbar />
       <Hero />
+      
       <Trending/>
       <Whyus/>      
       <Footer/>
