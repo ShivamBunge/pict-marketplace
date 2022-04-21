@@ -4,6 +4,7 @@ import Navbar from "./Components/Global/Navbar/Navbar";
 import Hero from "./Components/page1/Hero/Hero";
 import Whyus from "./Components/page1/Whyus/Whyus";
 import Footer from "./Components/Global/Footer/Footer";
+import Top_services from "./Components/page1/Top_service/Top_service";
 
 const Layer = () => {
   return (
@@ -12,7 +13,8 @@ const Layer = () => {
       <Hero />
       
       <Trending/>
-      <Whyus/>      
+      <Whyus/>   
+      <Top_services/>   
       <Footer/>
     </div>
   );
