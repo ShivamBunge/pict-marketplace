@@ -1,0 +1,27 @@
+
+.cardx{
+  
+  cursor: pointer;
+    margin: 20px;
+    background-image: linear-gradient(to bottom right , rgb(181, 166, 251), white);
+}
+.heading{
+  
+    margin-top: 5rem;
+    text-align: center;
+}
+.cardbox{
+    margin: auto;
+    width: 90%;
+    justify-content: center;
+    padding: 10px;
+    /* background-color:rgb(248, 223, 186); */
+    border-radius: 40px; 
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 500px) {
+    .cardbox{
+      width: 90%;
+    }
+  }

@@ -1,8 +1,10 @@
 @import "../../../Styles/App.css";
 
-.my-nav {
-  position: absolute;
-  z-index: 10;
-  width: 100%;
-  background:transparent;
+
+.navbar{
+  background-color: transparent;
+}
+
+.navbar.colorChange{
+  background-color: #000;
 }

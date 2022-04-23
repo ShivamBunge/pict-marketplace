@@ -1,38 +1,55 @@
-import React from "react";
-import "./navbar.css";
-function Navbar() {
-  return (
-    <nav className="my-nav navbar navbar-expand-lg navbar-light fixed-top">
-<div className="container-fluid">
-<a className="navbar-brand" href="#">MentorNow</a>
-<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  <span className="navbar-toggler-icon"></span>
-</button>
-<div className="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-    <li className="nav-item">
-      <a className="nav-link active" aria-current="page" href="#">Home</a>
-    </li>
-    <li className="nav-item">
-      <a className="nav-link" href="#">Link</a>
-    </li>
-    <li className="nav-item dropdown">
-      <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Dropdown
-      </a>
-      <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a className="dropdown-item" href="#">Action</a></li>
-        <li><a className="dropdown-item" href="#">Another action</a></li>
-        <li><a className="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-    </li>
-  </ul>
-
-</div>
-</div>
-</nav>
-
-);
+import React, { useState, Fragment } from 'react'
+import { FaBars } from 'react-icons/fa';
+import {
+Nav,
+NavContainer,
+NavLogo,
+NavItem,
+NavLinks,
+NavMenu,
+MobileIcon,
+} from './NavbarStyles';
+import './navbar.css';
+const Navbar = () => {
+const [colorChange, setColorchange] = useState(false);
+const changeNavbarColor = () =>{
+	if(window.scrollY >= 80){
+	setColorchange(true);
+	}
+	else{
+	setColorchange(false);
+	}
+};
+window.addEventListener('scroll', changeNavbarColor);
+return (
+	<Fragment>
+		<Nav className={colorChange ? 'navbar colorChange' : 'navbar'}>
+		<NavContainer>
+			<NavLogo href="#">MentorNow</NavLogo>
+			<MobileIcon>
+			<FaBars />
+			</MobileIcon>
+			<NavMenu>
+				<NavItem>
+				<NavLinks href="#">About</NavLinks>
+				</NavItem>
+				<NavItem>
+				<NavLinks href="#">Services</NavLinks>
+				</NavItem>
+				<NavItem>
+				<NavLinks href="#">Events</NavLinks>
+				</NavItem>
+				<NavItem>
+				<NavLinks href="#">Contact</NavLinks>
+				</NavItem>
+				<NavItem>
+				<NavLinks href="#">Sign In</NavLinks>
+				</NavItem>
+			</NavMenu>
+		</NavContainer>
+		</Nav>
+	</Fragment>
+	)
 }
 
 export default Navbar;
