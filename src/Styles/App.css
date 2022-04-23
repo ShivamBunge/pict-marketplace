@@ -4,6 +4,7 @@
   padding: 0;
 }
 body {
+  overflow-x: hidden;
   --primary-color: #00b8a2;
   --secondary-color: #5463ff;
   --button-color: #fabb04;

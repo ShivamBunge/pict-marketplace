@@ -1,13 +1,13 @@
 import React from "react";
 import sData from './sData';
-import Card from './Card';
-const Top_services = () => {
+import Cardx from './Cardx';
+const TopServices = () => {
   return(    
   <>
   <h2 className='heading'>Top Service Providers</h2>
-  <div className='cardContainer'>
+  <div className='cardbox'>
   {sData.map(function ncard(val){  //can use arrow function as well
-       return <Card
+       return <Cardx
        key={val.id}
        title={val.sname}
        description={val.descrip}
@@ -21,4 +21,4 @@ const Top_services = () => {
 
 
 
-export default Top_services;
+export default TopServices;

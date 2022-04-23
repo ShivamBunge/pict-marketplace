@@ -28,6 +28,13 @@ const sData= [
         sname: "Tanya Singh",
         imgsrc:"https://www.vmcdn.ca/f/files/nob/uploadedImages/Industry-News/small-business-focus/woman_entrepreneur.jpeg;w=1200;h=800;mode=crop",
         descrip:"Charted Accountant and Tax Expert"
-    }
+    },
+    {   
+        id:6,
+        sname: "Ramesh Patil",
+        imgsrc:"https://www.businessinsider.in/photo/69572469/Master.jpg",
+        descrip:"Career Counsellor"
+    },
+
 ]
 export default sData;

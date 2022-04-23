@@ -26,6 +26,7 @@
     /* animation-direction: alternate; */
 
     height: 100vh;
+    height: fit-content;
     display: flex;
     /* position: relative; */
   }
@@ -67,7 +68,7 @@
   }
   @media screen and (max-width: 600px) {
     .header{
-      height:70vh;
+      height:80vh;
     }
     .row{
       padding: 14vh 4vw;  

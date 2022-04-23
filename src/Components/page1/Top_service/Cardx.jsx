@@ -1,12 +1,12 @@
 import React from "react";
-import './cards.css';
+import './top_service.css';
 const size={ width: "15rem"};
 
-function Card(props) {
+function Cardx(props) {
     return(
     <>
    
-    <div className="card" style={size}>
+    <div className="cardx" style={size}>
         <img src={props.img} className="card-img-top" alt="..."/>
             <div className="card-body">
                 <h5 className="card-title">{props.title}</h5>
@@ -19,4 +19,4 @@ function Card(props) {
     </>
     )
 }
-export default Card;
+export default Cardx;

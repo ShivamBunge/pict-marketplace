@@ -1,117 +1,55 @@
 import React from 'react'
 import "./trending.css";
 
+const Card = (props) => (
+  <div className="card">
+    <img src={ props.imgUrl } 
+      alt={ props.alt || 'Image' } />
+    <div className="card-content">
+      <h2>{ props.title }</h2>
+      <p>{ props.content }</p>
+    </div>
+  </div>
+);
 
-const Trending = () => {
-  return (
+const CardContainer = (props) => (
+  <div className="cards-container">
+    {
+      props.cards.map((card) => (
+        <Card title={ card.title }
+          content={ card.content }
+          imgUrl={ card.imgUrl } />
+      ))
+    }
+  </div>
+);
 
-    <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-      <h1 className='heading'>Explore the Trending Services</h1>
-      <div className="carousel-inner">
-        <div className="carousel-item active" >
-
-          <div className="card-group">
-            {/* <div className="col-sm-4"> */}
-
-              <div className="card border-success mb-3" >
-                <div className="card-header">Header 1</div>
-                <img className="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB9apF3GjrZ4wel6m4vQ1-YyH9D-Jdp-BSPw&usqp=CAU" alt="Card image cap" />
-
-                <div className="card-body text-success">
-                  <h5 className="card-title">Success card title</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div><br />
-            
-              <div className="card border-success mb-3" >
-                <div className="card-header">Header</div>
-                <img className="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB9apF3GjrZ4wel6m4vQ1-YyH9D-Jdp-BSPw&usqp=CAU" alt="Card image cap" />
-                <div className="card-body text-success">
-                  <h5 className="card-title">Success card title</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div><br />
-
-            <div className="card border-success mb-3" >
-              <div className="card-header">Header</div>
-              <img className="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB9apF3GjrZ4wel6m4vQ1-YyH9D-Jdp-BSPw&usqp=CAU" alt="Card image cap" />
-              <div className="card-body text-success">
-                <h5 className="card-title">Success card title</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="carousel-item" >
-          {/* <img src="..." className="d-block w-100" alt="..." /> */}
-          <div className="card-group">
-            <div className="card border-success mb-3" >
-              <div className="card-header">Header 2</div>
-              <img className="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB9apF3GjrZ4wel6m4vQ1-YyH9D-Jdp-BSPw&usqp=CAU" alt="Card image cap" />
-              <div className="card-body text-success">
-                <h5 className="card-title">Success card title</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div><br />
-            <div className="card border-success mb-3" >
-              <div className="card-header">Header</div>
-              <img className="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB9apF3GjrZ4wel6m4vQ1-YyH9D-Jdp-BSPw&usqp=CAU" alt="Card image cap" />
-              <div className="card-body text-success">
-                <h5 className="card-title">Success card title</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div><br />
-            <div className="card border-success mb-3" >
-              <div className="card-header">Header</div>
-              <img className="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB9apF3GjrZ4wel6m4vQ1-YyH9D-Jdp-BSPw&usqp=CAU" alt="Card image cap" />
-              <div className="card-body text-success">
-                <h5 className="card-title">Success card title</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="carousel-item" >
-          {/* <img src="..." className="d-block w-100" alt="..." /> */}
-          <div className="card-group">
-            <div className="card border-success mb-3" >
-              <div className="card-header">Header 3</div>
-              <img className="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB9apF3GjrZ4wel6m4vQ1-YyH9D-Jdp-BSPw&usqp=CAU" alt="Card image cap" />
-              <div className="card-body text-success">
-                <h5 className="card-title">Success card title</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div><br />
-            <div className="card border-success mb-3" >
-              <div className="card-header">Header</div>
-              <img className="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB9apF3GjrZ4wel6m4vQ1-YyH9D-Jdp-BSPw&usqp=CAU" alt="Card image cap" />
-              <div className="card-body text-success">
-                <h5 className="card-title">Success card title</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div><br />
-            <div className="card border-success mb-3" >
-              <div className="card-header">Header</div>
-              <img className="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB9apF3GjrZ4wel6m4vQ1-YyH9D-Jdp-BSPw&usqp=CAU" alt="Card image cap" />
-              <div className="card-body text-success">
-                <h5 className="card-title">Success card title</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+class Trending extends React.Component {
+  render () {
+    const cardsData = [
+      {id: 1, title: 'CARD 1', content: 'Clark Kent', imgUrl: 'https://unsplash.it/200/200'},
+      {id: 2, title: 'CARD 2', content: 'Bruce Wayne', imgUrl: 'https://unsplash.it/201/200'},
+      {id: 3, title: 'CARD 3', content: 'Peter Parker', imgUrl: 'https://unsplash.it/200/201'},
+      {id: 4, title: 'CARD 4', content: 'Tony Stark', imgUrl: 'https://unsplash.it/201/201'},
+      {id: 5, title: 'CARD 5', content: 'Reed Richards', imgUrl: 'https://unsplash.it/202/200'},
+      {id: 6, title: 'CARD 6', content: 'Wade Wilson', imgUrl: 'https://unsplash.it/200/199'},
+      {id: 7, title: 'CARD 7', content: 'Peter Quill', imgUrl: 'https://unsplash.it/199/199'},
+      {id: 8, title: 'CARD 8', content: 'Steven Rogers', imgUrl: 'https://unsplash.it/199/200'},
+      {id: 9, title: 'CARD 9', content: 'Bruce Banner', imgUrl: 'https://unsplash.it/200/198'},
+      {id: 10, title: 'CARD 10', content: 'Vincent Strange', imgUrl: 'https://unsplash.it/198/199'},
+    ]
+    
+    return(
+      <div className="container">
+        <h1 style={{ 'textAlign': 'center' }}>
+          Trending Services
+        </h1>
+        
+        <CardContainer cards={ cardsData } />
       </div>
-      <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
-      <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
-      </button>
-    </div >
-  )
+    );
+  }
+};
 
-}
 
-export default Trending
+export default Trending;

@@ -8,7 +8,7 @@ import "./footer.css";
 
 const Footer = () => {
  
-  return <div className="footer-area position-absolute b-0 w-100 bg-black d-flex  align-content-center p-4" id='#footer'>
+  return <div className="footer-area position-absolute b-0 w-100 bg-black d-flex  align-content-center p-2" id='#footer'>
 
   <div className='align-self-center text-white w-25'>&#169;2022 Brahmastra</div>
   <div className="logo-social d-flex justify-content-around  mx-auto w-25" target="blank" href=""  >
