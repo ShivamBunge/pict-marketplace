@@ -1,55 +1,55 @@
-import React, { useState, Fragment } from 'react'
-import { FaBars } from 'react-icons/fa';
-import {
-Nav,
-NavContainer,
-NavLogo,
-NavItem,
-NavLinks,
-NavMenu,
-MobileIcon,
-} from './NavbarStyles';
+import React, { useState } from 'react';
+import { Nav, Navbar, Button } from 'react-bootstrap';
 import './navbar.css';
-const Navbar = () => {
-const [colorChange, setColorchange] = useState(false);
-const changeNavbarColor = () =>{
-	if(window.scrollY >= 80){
-	setColorchange(true);
-	}
-	else{
-	setColorchange(false);
-	}
-};
-window.addEventListener('scroll', changeNavbarColor);
-return (
-	<Fragment>
-		<Nav className={colorChange ? 'navbar colorChange' : 'navbar'}>
-		<NavContainer>
-			<NavLogo href="#">MentorNow</NavLogo>
-			<MobileIcon>
-			<FaBars />
-			</MobileIcon>
-			<NavMenu>
-				<NavItem>
-				<NavLinks href="#">About</NavLinks>
-				</NavItem>
-				<NavItem>
-				<NavLinks href="#">Services</NavLinks>
-				</NavItem>
-				<NavItem>
-				<NavLinks href="#">Events</NavLinks>
-				</NavItem>
-				<NavItem>
-				<NavLinks href="#">Contact</NavLinks>
-				</NavItem>
-				<NavItem>
-				<NavLinks href="#">Sign In</NavLinks>
-				</NavItem>
-			</NavMenu>
-		</NavContainer>
-		</Nav>
-	</Fragment>
-	)
-}
+const Navb = () => {
+  const [colorChange, setColorchange] = useState(false);
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 80) {
+      setColorchange(true);
+    } else {
+      setColorchange(false);
+    }
+  };
 
-export default Navbar;
+  window.addEventListener('scroll', changeNavbarColor);
+  return (
+    <div className='App nav'>
+      <Navbar
+        variant='dark'
+        expand='sm'
+        fixed='top'
+        collapseOnSelect
+        id=''
+        className={colorChange ? 'navbar colorChange' : 'navbar'}
+      >
+        <Navbar.Brand className='nav-media' style={{ color: 'green' }}>
+          <span>M</span>enter
+          <span>N</span>ow
+        </Navbar.Brand>
+
+        <Navbar.Toggle className='coloring' />
+        <Navbar.Collapse style={{ paddingLeft: '20px', textAlign: 'center' }}>
+          <Nav
+            className='justify-content-end mr-auto my-2 my-lg-0'
+            style={{ width: '100%', paddingRight: '30px' }}
+          >
+            <Nav.Link href='#'>Explore</Nav.Link>
+            <Nav.Link href='#'>Become A Consultant</Nav.Link>
+            <Nav.Link href='#'>Sign In</Nav.Link>
+            <Nav.Link href='#'>
+              <Button
+                variant='secondary'
+                size='sm'
+                style={{ backgroundColor: '#60d394' }}
+              >
+                Join
+              </Button>{' '}
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
+  );
+};
+
+export default Navb;
