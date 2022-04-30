@@ -1,10 +1,21 @@
 @import "../../../Styles/App.css";
 
 
-.navbar{
+.nav-media{
+  padding-left:60px;
+  color: green;
+}
+
+@media (max-width: 600px) {
+  .nav-media {
+    padding-left: 20px;
+  }
+}
+.navbar {
   background-color: transparent;
 }
 
-.navbar.colorChange{
+.navbar.colorChange {
   background-color: #000;
 }
+
