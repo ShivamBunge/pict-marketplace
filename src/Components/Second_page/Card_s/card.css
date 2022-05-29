@@ -1,0 +1,38 @@
+@import "../../../Styles/App.css";
+.seller {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.seller-img-name {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.sname {
+  padding-left: 0.5rem;
+}
+.seller-rating {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.rating {
+  font-size: 1.5rem;
+  font-family: var(--Nunito);
+}
+.card-btn {
+  background-color: var(--button-color2) !important;
+  color: black !important;
+  font-size: 1.2rem;
+  font-weight: 800;
+  font-family: var(--Nunito);
+  border: none !important;
+}
+.page_card_area {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}

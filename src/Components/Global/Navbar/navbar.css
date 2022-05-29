@@ -1,21 +1,18 @@
 @import "../../../Styles/App.css";
-
-
-.nav-media{
-  padding-left:60px;
+.nav-media {
+  padding-left: 60px;
   color: green;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .nav-media {
     padding-left: 20px;
   }
 }
 .navbar {
-  background-color: transparent;
+  background-color: var(--primary-color);
 }
 
 .navbar.colorChange {
   background-color: #000;
 }
-

@@ -1,0 +1,27 @@
+@import "../../../Styles/App.css";
+.second-page-area {
+  display: flex;
+  align-items: center;
+}
+.place-card {
+  margin-bottom: 5rem;
+  position: relative;
+  display: flex;
+}
+.second-page-title {
+  font-size: var(--super-header-font-size);
+  font-weight: 900;
+  font-family: var(--Nunito);
+  width: 60rem;
+  line-height: 1.2;
+  margin: 6rem 0 2rem 0;
+}
+.second-page-description {
+  font-size: 2rem !important;
+  font-weight: 600;
+  font-family: var(--Nunito);
+  width: 42rem;
+  line-height: 1.1;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+}

@@ -1,1 +1,79 @@
 @import "../../../Styles/App.css";
+.footer-area {
+  background-color: var(--Bcolor);
+  height: 60% !important;
+  color: #fff;
+  padding: 1.5rem 0;
+}
+.Left-footer,
+.Right-footer {
+  display: flex;
+  font-size: var(--para-font-size);
+  font-weight: 400;
+  font-family: var(--Nunito);
+}
+.Right-footer {
+  justify-content: flex-end;
+}
+.Right-footer a {
+  text-decoration: none !important;
+  color: var(--Wcolor);
+}
+.center-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.footer-social img {
+  width: 90%;
+}
+
+.logo-social:hover {
+  transform: scale(1.2);
+}
+.Privacy:hover,
+.terms:hover {
+  color: #5cf300;
+  text-decoration: none;
+}
+/* media queries */
+@media only screen and (max-width: 768px) {
+  .Left-footer,
+  .Right-footer {
+    font-size: var(--para-font-size-mobile);
+    justify-content: center;
+  }
+  .Left-footer {
+    margin-top: 5rem !important;
+  }
+  .Right-footer {
+    margin-top: 1rem !important;
+  }
+  .center-footer {
+    margin-top: -6rem !important;
+    justify-content: center;
+  }
+  .footer-social img {
+    width: 80%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer-social img {
+    width: 80%;
+  }
+  .Left-footer,
+  .Right-footer {
+    font-size: var(--para-font-size);
+    justify-content: center;
+  }
+  .Left-footer {
+    margin-top: 5rem !important;
+  }
+  .Right-footer {
+    margin-top: 1rem !important;
+  }
+  .center-footer {
+    margin-top: -6rem !important;
+    justify-content: center;
+  }
+}
