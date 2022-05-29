@@ -1,64 +1,56 @@
 import React from "react";
-import Instagram from './../../../Assets/Instagram.svg'
-import LinkedIn from './../../../Assets/linkedin.svg'
-import Mail from './../../../Assets/Mail.svg'
-import Twitter from './../../../Assets/twitter.svg'
-import Youtube from './../../../Assets/youtube.svg'
+import Instagram from "./../../../Assets/Instagram.svg";
+import Youtube from "./../../../Assets/youtube.svg";
+import Mail from "./../../../Assets/Mail.svg";
+import Twitter from "./../../../Assets/twitter.svg";
+import LinkedIn from "./../../../Assets/linkedin.svg";
 import "./footer.css";
+import PRIVACY_NOTICE from "../../../Assets/PRIVACY_NOTICE.pdf";
+import Service_Agreement from "../../../Assets/Service_Agreement.pdf";
 
 const Footer = () => {
- 
-  return <div className="footer-area position-absolute b-0 w-100 bg-black d-flex  align-content-center p-2" id='#footer'>
+  return (
+    <div className="footer-area text-white">
+      <div className="container">
+        <div className="row">
+          <div class=" Left-footer col-lg-4 col-xl-4 col-md-12 col-sm-12 col-xs-12">
+            <div className=" align-self-center ">&#169;2022 Brahmastra</div>
+          </div>
 
-  <div className='align-self-center text-white w-25'>&#169;2022 Brahmastra</div>
-  <div className="logo-social d-flex justify-content-around  mx-auto w-25" target="blank" href=""  >
-      <a className="logo-social" target="blank" href="">
-          <img src={Instagram} alt="IG" className='img-fluid' />
-      </a>
-
-      <a
-          className="logo-special"
-          target="blank"
-          href="#"
-      >
-          <img src={LinkedIn} alt="LinkedIn" className='img-fluid' />
-
-      </a>
-
-      <a
-          className="logo-special"
-          target="blank"
-          href=" "
-      >
-          <img src={Mail} alt="Gmail" className='img-fluid' />
-
-      </a>
-
-      <a
-          className="logo-special"
-          target="blank"
-          href=" "
-      >
-          <img src={Twitter} alt="Twitter" className='img-fluid' />
-
-      </a>
-
-      <a
-          className="logo-special"
-          target="blank"
-          href=" "
-      >
-          <img src={Youtube} alt="Youtube" className='img-fluid' />
-
-      </a>
-
-
-  </div>
-  <div className='text-white w-25 align-self-center'>Privacy policy | Terms & conditions</div>
-
-
-</div>
-
-}
+          <div class="col-lg-4 col-xl-4 col-md-12 col-sm-12 col-xs-12">
+            <div className="center-footer ">
+              <a className="footer-social" target="blank" href="">
+                <img src={Instagram} alt="IG" />
+              </a>
+              <a className="footer-social" target="blank" href="">
+                <img src={Youtube} alt="Github" />
+              </a>
+              <a className="footer-social" target="blank" href="">
+                <img src={Mail} alt="Mail" />
+              </a>
+              <a className="footer-social" target="blank" href="">
+                <img src={Twitter} alt="Linkedin" />
+              </a>
+              <a className="footer-social" target="blank" href="">
+                <img src={LinkedIn} alt="Linkedin" />
+              </a>
+            </div>
+          </div>
+          <div class=" Right-footer col-lg-4 col-xl-4 col-md-12 col-sm-12 col-xs-12">
+            <div className="align-self-center ">
+              <a className="Privacy" href={PRIVACY_NOTICE} target="_blank">
+                Privacy Policy
+              </a>
+              <span> | </span>
+              <a className="terms" href={Service_Agreement} target="_blank">
+                Service Agreement
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Footer;

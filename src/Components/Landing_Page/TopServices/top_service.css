@@ -1,0 +1,28 @@
+.cardx {
+  cursor: pointer;
+  margin: 20px;
+  background-image: linear-gradient(to bottom right, rgb(181, 166, 251), white);
+}
+.heading {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: var(--super-header-font-size);
+  font-weight: 900;
+  font-family: var(--Nunito);
+}
+.cardbox {
+  margin: auto;
+  width: 90%;
+  justify-content: center;
+  padding: 10px;
+
+  border-radius: 40px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 500px) {
+  .cardbox {
+    width: 90%;
+  }
+}
