@@ -34,7 +34,7 @@ const Navb = () => {
             className="justify-content-end mr-auto my-2 my-lg-0"
             style={{ width: "100%", paddingRight: "30px" }}
           >
-            <Link to='#'>Explore</Link>
+            <Link to='/expertprofile'>Explore</Link>
             <Link style={{color:"white",textDecoration:"None"}}  to='/expertOnboard'>Become A Consultant</Link>
             <Link style={{color:"white",textDecoration:"None"}}  to='/signin'>Sign In</Link>
 
