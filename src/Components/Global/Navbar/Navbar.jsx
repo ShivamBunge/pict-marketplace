@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Nav, Navbar, Button } from "react-bootstrap";
 import "./navbar.css";
 const Navb = () => {
@@ -33,18 +34,19 @@ const Navb = () => {
             className="justify-content-end mr-auto my-2 my-lg-0"
             style={{ width: "100%", paddingRight: "30px" }}
           >
-            <Nav.Link href="#">Explore</Nav.Link>
-            <Nav.Link href="#">Become A Consultant</Nav.Link>
-            <Nav.Link href="#">Sign In</Nav.Link>
-            <Nav.Link href="#">
+            <Link to='#'>Explore</Link>
+            <Link style={{color:"white",textDecoration:"None"}}  to='/expertOnboard'>Become A Consultant</Link>
+            <Link style={{color:"white",textDecoration:"None"}}  to='/signin'>Sign In</Link>
+
+            <Link to='/signup'>
               <Button
-                variant="secondary"
-                size="sm"
-                style={{ backgroundColor: "#60d394" }}
+                variant='secondary'
+                size='sm'
+                style={{ backgroundColor: '#60d394' }}
               >
                 Join
-              </Button>{" "}
-            </Nav.Link>
+              </Button>{' '}
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
