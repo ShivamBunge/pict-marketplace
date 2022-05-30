@@ -24,8 +24,9 @@ const Navb = () => {
         className={colorChange ? "navbar colorChange" : "navbar"}
       >
         <Navbar.Brand className="nav-media" style={{ color: "green" }}>
-          <span>M</span>enter
-          <span>N</span>ow
+          <Link to="/"><span>M</span>enter
+          <span>N</span>ow</Link>
+          
         </Navbar.Brand>
 
         <Navbar.Toggle className="coloring" />
@@ -35,8 +36,8 @@ const Navb = () => {
             style={{ width: "100%", paddingRight: "30px" }}
           >
             <Link to='/expertprofile'>Explore</Link>
-            <Link style={{color:"white",textDecoration:"None"}}  to='/expertprofile'>Become A Consultant</Link>
-            <Link style={{color:"white",textDecoration:"None"}}  to='/login'>Sign In</Link>
+            <Link style={{ color: "white", textDecoration: "None" }} to='/expertprofile'>Become A Consultant</Link>
+            <Link style={{ color: "white", textDecoration: "None" }} to='/login'>Sign In</Link>
 
             <Link to='/signup'>
               <Button
@@ -47,6 +48,8 @@ const Navb = () => {
                 Join
               </Button>{' '}
             </Link>
+            <Link style={{ color: "white", textDecoration: "None" }} to='/profile'>Profile</Link>
+
           </Nav>
         </Navbar.Collapse>
       </Navbar>

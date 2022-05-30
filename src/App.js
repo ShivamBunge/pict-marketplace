@@ -12,7 +12,7 @@ import Explore_trending_data from "./Components/Landing_Page/Explore_trending_se
 
 import Login from "./Components/auth/Login/Login";
 import Signup from "./Components/auth/Signup/Signup";
-
+import CustomerDb from "./Components/CustomerDb/CustomerDb";
 import { auth } from "./firebase";
 function App() {
   const [userName, setUserName] = useState("");
@@ -43,7 +43,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
           {/* <Route path="/" element={<Home name={userName} />} /> */}
-        
+        <Route path="/profile" element={<CustomerDb />} />
+
       </Routes>
       <Footer />
     </div>

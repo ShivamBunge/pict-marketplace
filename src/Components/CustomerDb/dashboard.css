@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap');
+input{
+    padding: 1px 20px;
+    background: #e6e4ff;
+    border-radius: 6px;
+    border:solid grey 1px ;
+}
+h5{
+    font-family: 'Macondo', cursive;
+        font-size: medium;
+}
+p{
+    font-family: 'Lora', serif;
+        font-size: medium;
+}
+.info{
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+}
+.txt-ar-box{
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+}
+.text-ar{
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: #e6e4ff;
+    height: 30vh;
+    width: 50vw;
+    @media (max-width: 600px) {
+        width: 80vw;
+    }
+}
+.wrapper {
+    max-width: 700px;
+  margin: 5% auto;
+  display: grid;
+  grid-gap: 0rem;
+  
+  }
+  @media (min-width: 600px) {
+    .wrapper { grid-template-columns: repeat(2, 1fr); }
+    .seven{
+    grid-row: 4;
+    grid-column: 1 / 2;
+}
+.p-info-tx {
+    grid-column: 1 / 2;
+    grid-row : 5 / 6;
+  }
+}
