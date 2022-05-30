@@ -1,0 +1,21 @@
+.Usericon{
+
+    display: flex;
+}
+
+.Testbox{
+
+    display: flex;
+}
+
+.TitleDetails{
+
+
+background: white;
+}
+
+.rounded-circle{
+    width: 80px;
+    height: 80px;
+}
+

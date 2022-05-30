@@ -1,16 +1,20 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-import { useParams } from "react-router";
 import "./card.css";
 import Seller_img from "./../../../Assets/seller-img.svg";
 import Star from "./../../../Assets/Star.svg";
 import temp from "./../../../Assets/temp.svg";
+import { useNavigate } from 'react-router-dom';
 const Card_s = () => {
-  // const params = useParams();
-  // const { title } = params;
+  const navigate= useNavigate();
+  const thirdpg = () => {
+    // 👇️ navigate to /pg3 
+    navigate('/Thirdpg');
+  };
   return (
-    <>
-      {/* {spcarddata
+    
+  <>
+    {/* {spcarddata
         .filter((Second_page_data) => Second_page_data.title === title)
         .map((spcarddata) => (
           <>
@@ -55,9 +59,36 @@ const Card_s = () => {
             ))}
           </>
         ))} */}
-      <div className="page_card_area  ">
-        <div className="row justify-content-center align-item-center  ">
-          <Card style={{ width: "18rem" }}>
+    <div className="page_card_area  ">
+      <div className="row justify-content-center align-item-center  ">
+        <Card style={{ width: "18rem" }}>
+          <Card.Img variant="top" src={temp} />
+          <Card.Body>
+            <div className="seller">
+              <div className="seller-img-name">
+                <div className="simg">
+                  <img src={Seller_img} />
+                </div>
+                <div className="sname">Name of seller</div>
+              </div>
+              <div className="seller-rating">
+                <div className="rating">5</div>
+                <div className="star">
+                  <img src={Star} />
+                </div>
+              </div>
+            </div>
+            <Card.Title>Card Title</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up
+              the bulk of the card's content.
+            </Card.Text>
+            <Button onClick={thirdpg} className="card-btn" variant="primary">
+              Buy
+            </Button>
+          </Card.Body>
+        </Card>
+        {/* <Card style={{ width: "18rem" }}>
             <Card.Img variant="top" src={temp} />
             <Card.Body>
               <div className="seller">
@@ -137,37 +168,11 @@ const Card_s = () => {
                 Buy
               </Button>
             </Card.Body>
-          </Card>
-          <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src={temp} />
-            <Card.Body>
-              <div className="seller">
-                <div className="seller-img-name">
-                  <div className="simg">
-                    <img src={Seller_img} />
-                  </div>
-                  <div className="sname">Name of seller</div>
-                </div>
-                <div className="seller-rating">
-                  <div className="rating">5</div>
-                  <div className="star">
-                    <img src={Star} />
-                  </div>
-                </div>
-              </div>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button className="card-btn" variant="primary">
-                Buy
-              </Button>
-            </Card.Body>
-          </Card>
-        </div>
+          </Card> */}
       </div>
-    </>
+    </div>
+
+  </>
   );
 };
 

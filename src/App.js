@@ -1,6 +1,7 @@
 import "./Styles/App.css";
 import React, { useLayoutEffect } from "react";
 import Layer from "./Layer";
+import ThirdPg from "./Components/Third_pg/Top/ThirdPg";
 
 import { Routes, Route, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -25,6 +26,8 @@ function App() {
           path="/trendin_service/:title"
           element={<Second_p data={Explore_trending_data} />}
         />
+        <Route path="/Thirdpg" element={<ThirdPg/>}/>
+
         {/* <Route path="/*" element={<Navigate to="/" />} /> */}
       </Routes>
       <Footer />

@@ -1,0 +1,30 @@
+@import "../../../Styles/App.css";
+
+.im{
+    width: 30px;
+    height: 30px;
+    border-radius: 5rem;
+}
+h4{
+    padding-top: 10px;
+}
+.circle-div {
+    display: flex;
+    align-items: center;
+}
+
+.heading {
+    width: 100%;
+    padding: 0.5rem; 
+}
+
+p{
+    font-size: 15px;
+    width: 60%;
+}
+
+@media screen and (max-width:900px) {
+    p{
+        width: 100%;
+    }
+}
