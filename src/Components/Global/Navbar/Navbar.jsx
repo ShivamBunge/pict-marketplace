@@ -35,8 +35,8 @@ const Navb = () => {
             style={{ width: "100%", paddingRight: "30px" }}
           >
             <Link to='/expertprofile'>Explore</Link>
-            <Link style={{color:"white",textDecoration:"None"}}  to='/expertOnboard'>Become A Consultant</Link>
-            <Link style={{color:"white",textDecoration:"None"}}  to='/signin'>Sign In</Link>
+            <Link style={{color:"white",textDecoration:"None"}}  to='/expertprofile'>Become A Consultant</Link>
+            <Link style={{color:"white",textDecoration:"None"}}  to='/login'>Sign In</Link>
 
             <Link to='/signup'>
               <Button

@@ -1,0 +1,45 @@
+.card form .details{
+    display: grid;
+    /* grid-template-columns: repeat(2,1fr); */
+    padding: 5px;
+}
+
+.card form .details *{
+    padding: 10px;
+}
+
+.card{
+    width: fit-content;
+    background-image: linear-gradient(to right,white,#E2DFD2);
+    margin-top: 100px;
+}
+
+@media screen and (min-width: 600px){
+    .details {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 1080px){
+    .expRegistrationForm .details{
+        width:min-content;
+    }
+
+    .card form .details *{
+        padding: 0;
+        /* width: min-content; */
+    }
+
+    .form-group *{
+        display: flex;
+        text-align: center;
+    }
+    
+    .card{
+       width: 95%;
+
+    }
+
+}
+
