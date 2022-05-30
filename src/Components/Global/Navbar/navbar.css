@@ -16,3 +16,20 @@
 .navbar.colorChange {
   background-color: #000;
 }
+.links{
+  margin-right: 2rem;
+  color:white;
+  font-family: var(--Poppins);
+  font-weight: 200;
+  text-decoration: none;
+ 
+}
+links:hover{
+  color: black;
+}
+
+.logo{
+  text-decoration: none;
+  font-weight: 800;
+  color: white;
+}

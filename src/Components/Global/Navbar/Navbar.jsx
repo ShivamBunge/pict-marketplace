@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Nav, Navbar, Button } from "react-bootstrap";
+import { Image,Nav, Navbar } from "react-bootstrap";
 import "./navbar.css";
+import mentor from "../../../Assets/mentor.png"
 const Navb = () => {
   const [colorChange, setColorchange] = useState(false);
   const changeNavbarColor = () => {
@@ -24,31 +25,19 @@ const Navb = () => {
         className={colorChange ? "navbar colorChange" : "navbar"}
       >
         <Navbar.Brand className="nav-media" style={{ color: "green" }}>
-          <Link to="/"><span>M</span>enter
-          <span>N</span>ow</Link>
-          
+          <Link className="logo" to="/">
+          <img src={mentor} alt="Example1" width="30" height="35"/>entorNow
+        </Link>
         </Navbar.Brand>
 
         <Navbar.Toggle className="coloring" />
         <Navbar.Collapse style={{ paddingLeft: "20px", textAlign: "center" }}>
-          <Nav
-            className="justify-content-end mr-auto my-2 my-lg-0"
-            style={{ width: "100%", paddingRight: "30px" }}
-          >
-            <Link to='/expertprofile'>Explore</Link>
-            <Link style={{ color: "white", textDecoration: "None" }} to='/expertprofile'>Become A Consultant</Link>
-            <Link style={{ color: "white", textDecoration: "None" }} to='/login'>Sign In</Link>
-
-            <Link to='/signup'>
-              <Button
-                variant='secondary'
-                size='sm'
-                style={{ backgroundColor: '#60d394' }}
-              >
-                Join
-              </Button>{' '}
-            </Link>
-            <Link style={{ color: "white", textDecoration: "None" }} to='/profile'>Profile</Link>
+          <Nav className="justify-content-end mr-auto my-2 my-lg-0" style={{ width: "100%", paddingRight: "30px" }} >
+            <Link className="links" to="/">Explore</Link>
+            <Link className="links "  to='/expertprofile'>Become A Consultant</Link>
+            <Link className="links "  to='/login'>Sign In</Link>
+            <Link className="links"  to='/signup'> Join </Link>
+            <Link className="links"  to='/profile'>Profile</Link>
 
           </Nav>
         </Navbar.Collapse>

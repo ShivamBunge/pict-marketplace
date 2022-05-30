@@ -40,6 +40,11 @@ p{
   grid-gap: 0rem;
   
   }
+  
+.links{
+    text-decoration: none;
+    color: azure;
+}
   @media (min-width: 600px) {
     .wrapper { grid-template-columns: repeat(2, 1fr); }
     .seven{

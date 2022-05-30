@@ -5,7 +5,8 @@
   padding: 0;
 }
 body {
-  --primary-color: #00b8a2;
+  /* --primary-color: #00b8a2; */
+  --primary-color: #009999;
   --secondary-color: #5463ff;
   --tertiary-color: #d7d9ff;
   --button-color: #fabb04;

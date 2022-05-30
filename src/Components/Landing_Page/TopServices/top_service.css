@@ -1,8 +1,9 @@
 .cardx {
   cursor: pointer;
   margin: 20px;
-  background-image: linear-gradient(to bottom right, rgb(181, 166, 251), white);
+  background: #d7d9ff;
 }
+
 .heading {
   margin-top: 3rem;
   text-align: center;
