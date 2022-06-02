@@ -15,11 +15,11 @@ const Explore_trending_services = () => {
     <img src={RightArrow} alt="nextArrow" className="slick-next" {...props} />
   );
   const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
+    dots: true,
+    infinite: false,
+    speed: 200,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     initialSlide: 0,
     prevArrow: <SlickArrowLeft />,
     nextArrow: <SlickArrowRight />,
