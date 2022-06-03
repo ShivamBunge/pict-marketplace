@@ -1,14 +1,15 @@
-import React, { useState, useEffect, useNavigate } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Button, Nav, Navbar } from "react-bootstrap";
 import "./navbar.css";
 import mentor from "../../../Assets/mentor.png"
 import { auth } from "../../../firebase"
+
 const Navb = () => {
   const [signedup, changeSignupstate] = useState(false);
   const [name, setName] = useState("");
   const [msg, setMsg]=useState("");
-  const navigate= useNavigate;
+  const navigate= useNavigate();
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
@@ -36,7 +37,7 @@ const Navb = () => {
       // Sign-out successful.
       console.log("signed out");
       changeSignupstate(false);
-      navigate("/login");
+      navigate("/");
     }).catch((error) => {
       // An error happened.
       setMsg("An error occured. Try again")
@@ -83,3 +84,4 @@ const Navb = () => {
 };
 
 export default Navb;
+

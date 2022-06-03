@@ -17,7 +17,7 @@ const Footer = () => {
             <div className=" align-self-center ">&#169;2022 Brahmastra</div>
           </div>
 
-          <div class="col-lg-4 col-xl-4 col-md-12 col-sm-12 col-xs-12">
+          <div className="col-lg-4 col-xl-4 col-md-12 col-sm-12 col-xs-12">
             <div className="center-footer ">
               <a className="footer-social" target="blank" href="">
                 <img src={Instagram} alt="IG" />
