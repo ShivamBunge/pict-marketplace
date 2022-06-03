@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-const Support = () => {
+const SupportExp = () => {
     return (
         <Container>
             <h5>Create a ticket</h5>
@@ -31,4 +31,4 @@ const Container = styled.div`
     margin: 1rem 0 0 0;
   }
 `;
-export default Support
+export default SupportExp;

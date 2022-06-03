@@ -5,45 +5,40 @@ import { FaWallet } from "react-icons/fa";
 import AvatarImage from "../../Assets/avatarImage.jpeg";
 import { darkThemeColor } from "./Utils";
 
-import {
-  BrowserRouter as Router,
-  Link
-} from 'react-router-dom';
+import { BrowserRouter as Router, Link, Outlet } from 'react-router-dom';
 
 function Sidebar() {
   return (
-    
-      <Container>
-        <ProfileContainer>
-          <Avatar src={AvatarImage} />
-          <Name>Kishan Sheth</Name>
-          <button className="btn btn-secondary btn-sm">Change</button>
-        </ProfileContainer>
-        <ItemsContainer>
-          <Items>
-            <Item>
-              <RiHomeLine />
-              <Link className="links" to="/"><h5>Profile</h5></Link>
-            </Item>
-            <Item>
-              <RiFileCopyLine />
-              <Link className="links" to="/appointments"><h5>Appointments</h5></Link>
-            </Item>
-            <Item>
-              <FaWallet />
-              <Link className="links" to="/support"><h5>Support</h5></Link>
-            </Item>
-            {/* <Item>
-            <AiOutlinePieChart />
-            <h5>Reports</h5>
-          </Item> */}
-          </Items>
 
-        </ItemsContainer>
+    <Container>
+      <ProfileContainer>
+        <Avatar src={AvatarImage} />
+        <Name>Kishan Sheth</Name>
+        <button className="btn btn-secondary btn-sm">Change</button>
+      </ProfileContainer>
+      <ItemsContainer>
+        <Items>
+          <Item>
+            <RiHomeLine />
+            <Link className="links" to="/profile"><h5>Profile</h5></Link>
+          </Item>
+          <Item>
+            <RiFileCopyLine />
+            <Link className="links" to="/profile/appointments"><h5>Appointments</h5></Link>
+          </Item>
+          <Item>
+            <FaWallet />
+            <Link className="links" to="/profile/support"><h5>Support</h5></Link>
+          </Item>
+       
+        </Items>
+        
 
-      </Container>
-    
-    
+      </ItemsContainer>
+
+    </Container>
+
+
   );
 }
 

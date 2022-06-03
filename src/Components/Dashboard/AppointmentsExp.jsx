@@ -57,7 +57,7 @@ const Stats = (props) => {
     )
 }
 
-const Appointments = () => {
+const AppointmentsExp = () => {
     return (
         <Container>
             <h5>Stats</h5>
@@ -69,7 +69,7 @@ const Appointments = () => {
     )
 }
 
-export default Appointments
+export default AppointmentsExp;
 
 
 

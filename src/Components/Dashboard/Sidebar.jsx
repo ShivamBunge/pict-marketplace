@@ -23,20 +23,17 @@ function Sidebar() {
           <Items>
             <Item>
               <RiHomeLine />
-              <Link className="links" to="/"><h5>Profile</h5></Link>
+              <Link className="links" to="/expertprofile"><h5>Profile</h5></Link>
             </Item>
             <Item>
               <RiFileCopyLine />
-              <Link  className="links" to="/appointments"><h5>Appointments</h5></Link>
+              <Link  className="links" to="/expertprofile/eappointments"><h5>Appointments</h5></Link>
             </Item>
             <Item>
               <FaWallet />
-              <Link  className="links" to="/support"><h5>Support</h5></Link>
+              <Link  className="links" to="/expertprofile/esupport"><h5>Support</h5></Link>
             </Item>
-            {/* <Item>
-            <AiOutlinePieChart />
-            <h5>Reports</h5>
-          </Item> */}
+      
           </Items>
 
         </ItemsContainer>
