@@ -2,11 +2,10 @@ import React from 'react'
 import MainContent from './MainContent'
 import Sidebar from './Sidebar'
 import styled from 'styled-components';
-
 import {
   BrowserRouter as Router,
   Routes,
-  Route,Outlet
+  Route, Outlet
 } from 'react-router-dom';
 const CustomerDb = () => {
   return (

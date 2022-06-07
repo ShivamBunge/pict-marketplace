@@ -1,20 +1,40 @@
-import React from "react";
 import styled from "styled-components";
 import { RiHomeLine, RiFileCopyLine } from "react-icons/ri";
 import { FaWallet } from "react-icons/fa";
 import AvatarImage from "../../Assets/avatarImage.jpeg";
 import { darkThemeColor } from "./Utils";
+import {  doc, setDoc } from "firebase/firestore";
 
+import { auth,db } from "../../firebase";
 import { BrowserRouter as Router, Link, Outlet } from 'react-router-dom';
+import {React, useState } from "react";
 
 function Sidebar() {
+  const [profileImg, setProfileimg]= useState("");
+  auth.onAuthStateChanged( user => {
+    if (user) { 
+      setProfileimg(user.photoURL);
+     }
+  });
+  const saveImg=()=>{
+    const user=auth.currentUser;
+    setDoc(doc(db, "users", user.uid), {
+      user_id: user.uid,
+      name:"",
+      email: user.email,
+      img_url: profileImg
+    });
+  }
+  const handleChange=(target)=>{
+    setProfileimg(target.value)
+  }
   return (
 
     <Container>
       <ProfileContainer>
-        <Avatar src={AvatarImage} />
-        <Name>Kishan Sheth</Name>
-        <button className="btn btn-secondary btn-sm">Change</button>
+        <Avatar src={profileImg} />
+        <input type="text" onChange={handleChange} />
+        <button className="btn btn-secondary btn-sm" onClick={saveImg}>Change</button>
       </ProfileContainer>
       <ItemsContainer>
         <Items>

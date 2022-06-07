@@ -1,17 +1,35 @@
-import React from "react";
+import {React, useState} from "react";
 import styled from "styled-components";
 import "./dashboard.css"
+import { collection, addDoc } from "firebase/firestore";
+import { auth, db } from "../../firebase"
+
 function MainContent() {
+  const [name,setName]= useState("");
+  const [email,setEmail]=useState("");
+  auth.onAuthStateChanged( user => {
+    if (user) { 
+      setName(user.displayName)
+      setEmail(user.email)
+     }
+  });
+  const save = () => {  //this is actually update data operation
+   
+  }
   return (
     <Container>
       <div className="info">
         <div className="wrapper">
           <div className="one"><p>Username</p></div>
-          <div className="two"><p>Shivam Bunge</p></div>
+          <div className="two"><p>{name}</p></div>
           <div className="three"><p>Email</p></div>
-          <div className="four"><p>abc@gmail.com (cant be changd)</p></div>
+          <div className="four"><p>{email}</p></div>
           <div className="five"><p>Phone  </p></div>
-          <div className="six"><p><input classNameName="p-info" type={"text"} /></p><button type="button" class="btn btn-primary btn-sm">Save</button>
+          <div className="six"><p>
+           
+            <input className="p-info" type={"text"} />
+            {/* <button type="button" class="btn btn-primary btn-sm">Save</button> */}
+            </p>
           </div>
 
         </div>
@@ -21,7 +39,7 @@ function MainContent() {
             <p>
               <textarea rows="30" cols="30" wrap="soft" maxlength="400" className="text-ar"></textarea>
             </p>
-            <button type="button" class="btn btn-primary btn-sm">Save</button>
+            <button type="button" onClick={save} class="btn btn-primary btn-sm">Save</button>
 
           </div>
         </div>
