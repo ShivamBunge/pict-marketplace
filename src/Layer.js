@@ -14,7 +14,7 @@ const Layer = () => {
         // ...
         setDoc(doc(db, "users", user.uid), {
           user_id: user.uid,
-          name:"",
+          name:user.displayName,        
           email: user.email,
           img_url: user.photoURL
         });

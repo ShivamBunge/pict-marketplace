@@ -1,35 +1,35 @@
-import {React, useState} from "react";
+import { React, useState } from "react";
 import styled from "styled-components";
 import "./dashboard.css"
-import { collection, addDoc } from "firebase/firestore";
 import { auth, db } from "../../firebase"
+import { doc, updateDoc } from "firebase/firestore";
 
 function MainContent() {
-  const [name,setName]= useState("");
-  const [email,setEmail]=useState("");
-  auth.onAuthStateChanged( user => {
-    if (user) { 
-      setName(user.displayName)
-      setEmail(user.email)
-     }
-  });
+  const [txt, setText] = useState("");
+  const [img, setImg]=useState("");
+  const user = auth.currentUser;
+  const textEdited = (event) => {
+    setText(event.target.value);
+  }
   const save = () => {  //this is actually update data operation
-   
+    updateDoc(doc(db, "users", user.uid), {
+      img_url: img,
+      about: txt
+    });
   }
   return (
     <Container>
       <div className="info">
         <div className="wrapper">
           <div className="one"><p>Username</p></div>
-          <div className="two"><p>{name}</p></div>
+          <div className="two"><p>{user.displayName}</p></div>
           <div className="three"><p>Email</p></div>
-          <div className="four"><p>{email}</p></div>
+          <div className="four"><p>{user.email}</p></div>
           <div className="five"><p>Phone  </p></div>
           <div className="six"><p>
-           
             <input className="p-info" type={"text"} />
             {/* <button type="button" class="btn btn-primary btn-sm">Save</button> */}
-            </p>
+          </p>
           </div>
 
         </div>
@@ -37,9 +37,9 @@ function MainContent() {
           <div className="seven"><p>About me</p></div>
           <div className="p-info-tx">
             <p>
-              <textarea rows="30" cols="30" wrap="soft" maxlength="400" className="text-ar"></textarea>
+              <textarea rows="30" cols="30" wrap="soft" maxlength="400" onChange={textEdited} className="text-ar"></textarea>
             </p>
-            <button type="button" onClick={save} class="btn btn-primary btn-sm">Save</button>
+            <button type="button" onClick={save} value={txt} class="btn btn-primary btn-sm">Save</button>
 
           </div>
         </div>

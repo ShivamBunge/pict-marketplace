@@ -11,13 +11,8 @@ import {React, useState } from "react";
 
 function Sidebar() {
   const [profileImg, setProfileimg]= useState("");
-  auth.onAuthStateChanged( user => {
-    if (user) { 
-      setProfileimg(user.photoURL);
-     }
-  });
+  const user=auth.currentUser;
   const saveImg=()=>{
-    const user=auth.currentUser;
     setDoc(doc(db, "users", user.uid), {
       user_id: user.uid,
       name:"",
@@ -32,7 +27,7 @@ function Sidebar() {
 
     <Container>
       <ProfileContainer>
-        <Avatar src={profileImg} />
+        <Avatar src={user.photoURL} />
         <input type="text" onChange={handleChange} />
         <button className="btn btn-secondary btn-sm" onClick={saveImg}>Change</button>
       </ProfileContainer>
