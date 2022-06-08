@@ -2,18 +2,23 @@ import { React, useState } from "react";
 import styled from "styled-components";
 import "./dashboard.css"
 import { auth, db } from "../../firebase"
-import { doc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc, getDoc } from "firebase/firestore";
+import { useEffect } from "react";
 
 function MainContent() {
+  // const [data, setData] = useState();
   const [txt, setText] = useState("");
-  const [img, setImg]=useState("");
   const user = auth.currentUser;
+  // useEffect(() => {
+  //   const docRef = doc(db, "users", user.uid);
+  //   const docSnap = getDoc(docRef);
+  //   setData(docSnap.data)
+  // });
   const textEdited = (event) => {
     setText(event.target.value);
   }
   const save = () => {  //this is actually update data operation
     updateDoc(doc(db, "users", user.uid), {
-      img_url: img,
       about: txt
     });
   }
@@ -37,7 +42,10 @@ function MainContent() {
           <div className="seven"><p>About me</p></div>
           <div className="p-info-tx">
             <p>
-              <textarea rows="30" cols="30" wrap="soft" maxlength="400" onChange={textEdited} className="text-ar"></textarea>
+              <textarea rows="30" cols="30" wrap="soft" maxlength="400" onChange={textEdited} className="text-ar" >
+
+              </textarea>
+
             </p>
             <button type="button" onClick={save} value={txt} class="btn btn-primary btn-sm">Save</button>
 

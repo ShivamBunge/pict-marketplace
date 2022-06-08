@@ -3,25 +3,30 @@ import { RiHomeLine, RiFileCopyLine } from "react-icons/ri";
 import { FaWallet } from "react-icons/fa";
 import AvatarImage from "../../Assets/avatarImage.jpeg";
 import { darkThemeColor } from "./Utils";
-import {  doc, setDoc } from "firebase/firestore";
+import {  doc, setDoc,updateDoc,getDoc } from "firebase/firestore";
 
 import { auth,db } from "../../firebase";
 import { BrowserRouter as Router, Link, Outlet } from 'react-router-dom';
 import {React, useState } from "react";
+import { useEffect } from "react";
 
 function Sidebar() {
+  // const [data, setData] = useState();
+  // useEffect(() => {
+  //   const docRef = doc(db, "users", user.uid);
+  //   const docSnap = getDoc(docRef);
+  //   setData(docSnap.data)
+  // });
   const [profileImg, setProfileimg]= useState("");
   const user=auth.currentUser;
   const saveImg=()=>{
-    setDoc(doc(db, "users", user.uid), {
-      user_id: user.uid,
-      name:"",
-      email: user.email,
+    updateDoc(doc(db, "users", user.uid), {
       img_url: profileImg
     });
   }
-  const handleChange=(target)=>{
-    setProfileimg(target.value)
+
+  const handleChange=(event)=>{
+    setProfileimg(event.target.value)
   }
   return (
 
