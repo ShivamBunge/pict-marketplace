@@ -22,12 +22,12 @@ const CustomerDb = () => {
 
 
 const Container = styled.div`
-  display: flex;
-  height: 100vh;
-  margin-top:4%;
-  background: white ;
-  @media screen and (max-width: 1080px) {
-    flex-direction: column;
+display: flex;
+margin-top:4%;
+background: #F5F5F5 ;
+@media screen and (max-width: 1080px) {
+  flex-direction: column;
+}
   }
 `;
 

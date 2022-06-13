@@ -1,35 +1,55 @@
-import {React, useState} from "react";
+import { React, useState } from "react";
 import styled from "styled-components";
 import "./dashboard.css"
-import { collection, addDoc } from "firebase/firestore";
 import { auth, db } from "../../firebase"
+import { doc, updateDoc, getDoc, where, collection, query, getDocs } from "firebase/firestore";
+import { useEffect } from "react";
+import { getAdditionalUserInfo } from "firebase/auth";
 
 function MainContent() {
-  const [name,setName]= useState("");
-  const [email,setEmail]=useState("");
-  auth.onAuthStateChanged( user => {
-    if (user) { 
-      setName(user.displayName)
-      setEmail(user.email)
-     }
-  });
+  const [data, setData] = useState({});
+  const [txt, setText] = useState("");
+  const user = auth.currentUser;
+
+  useEffect(() => {
+    getInfo()
+  }, [])
+  useEffect(() => {
+    console.log(data)
+  }, [data])
+  function getInfo() {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setData(docSnap.data())
+        }
+        // console.log("the data is", docSnap.data())
+      }
+    });
+  }
+  const textEdited = (event) => {
+    setText(event.target.value);
+  }
   const save = () => {  //this is actually update data operation
-   
+    updateDoc(doc(db, "users", user.uid), {
+      about: txt
+    });
   }
   return (
     <Container>
       <div className="info">
         <div className="wrapper">
           <div className="one"><p>Username</p></div>
-          <div className="two"><p>{name}</p></div>
+          <div className="two"><p>{user.displayName}</p></div>
           <div className="three"><p>Email</p></div>
-          <div className="four"><p>{email}</p></div>
+          <div className="four"><p>{user.email}</p></div>
           <div className="five"><p>Phone  </p></div>
           <div className="six"><p>
-           
             <input className="p-info" type={"text"} />
             {/* <button type="button" class="btn btn-primary btn-sm">Save</button> */}
-            </p>
+          </p>
           </div>
 
         </div>
@@ -37,10 +57,10 @@ function MainContent() {
           <div className="seven"><p>About me</p></div>
           <div className="p-info-tx">
             <p>
-              <textarea rows="30" cols="30" wrap="soft" maxlength="400" className="text-ar"></textarea>
+              <textarea rows="30" cols="30" wrap="soft" maxLength="400" onChange={textEdited} value={txt} className="text-ar" />
+              {data.about}
             </p>
-            <button type="button" onClick={save} class="btn btn-primary btn-sm">Save</button>
-
+            <button type="button" onClick={save} value={txt} class="btn btn-primary btn-sm">Save</button>
           </div>
         </div>
       </div>

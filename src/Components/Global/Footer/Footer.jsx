@@ -13,7 +13,7 @@ const Footer = () => {
     <div className="footer-area text-white">
       <div className="container">
         <div className="row">
-          <div class=" Left-footer col-lg-4 col-xl-4 col-md-12 col-sm-12 col-xs-12">
+          <div className=" Left-footer col-lg-4 col-xl-4 col-md-12 col-sm-12 col-xs-12">
             <div className=" align-self-center ">&#169;2022 Brahmastra</div>
           </div>
 
@@ -36,7 +36,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div class=" Right-footer col-lg-4 col-xl-4 col-md-12 col-sm-12 col-xs-12">
+          <div className=" Right-footer col-lg-4 col-xl-4 col-md-12 col-sm-12 col-xs-12">
             <div className="align-self-center ">
               <a className="Privacy" href={PRIVACY_NOTICE} target="_blank">
                 Privacy Policy
