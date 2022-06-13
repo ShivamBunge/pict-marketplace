@@ -18,13 +18,15 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
 }
 
 .footer {
   display: flex;
   flex-direction: column;
+  align-self: center;
   gap: 20px;
+  width: 80%;
 }
 
 .footer .error {
@@ -44,7 +46,8 @@
   border-radius: 5px;
   font-size: 1rem;
   font-weight: bold;
-  width: 80%;
+  height: 3rem;
+  width: 100%;
   transition: 100ms;
   cursor: pointer;
 }
@@ -55,6 +58,7 @@
 .footer button:hover {
   border-color: blue;
   background:primary;
+  color: #000;
 }
 .footer p {
   font-weight: 700;
