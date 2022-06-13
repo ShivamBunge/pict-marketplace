@@ -11,14 +11,29 @@ import {React, useState } from "react";
 import { useEffect } from "react";
 
 function Sidebar() {
-  // const [data, setData] = useState();
-  // useEffect(() => {
-  //   const docRef = doc(db, "users", user.uid);
-  //   const docSnap = getDoc(docRef);
-  //   setData(docSnap.data)
-  // });
+  const [data, setData] = useState({});
+  const user = auth.currentUser;
+
   const [profileImg, setProfileimg]= useState("");
-  const user=auth.currentUser;
+  useEffect(() => {
+    getInfo()
+    console.log(data)
+  }, [])
+  useEffect(() => {
+    console.log(data)
+  }, [data])
+  function getInfo() {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setData(docSnap.data())
+        }
+        // console.log("the data is", docSnap.data())
+      }
+    });
+  }
   const saveImg=()=>{
     updateDoc(doc(db, "users", user.uid), {
       img_url: profileImg
@@ -32,7 +47,7 @@ function Sidebar() {
 
     <Container>
       <ProfileContainer>
-        <Avatar src={user.photoURL} />
+        <Avatar src={data.img_url} />
         <input type="text" onChange={handleChange} />
         <button className="btn btn-secondary btn-sm" onClick={saveImg}>Change</button>
       </ProfileContainer>
@@ -66,7 +81,7 @@ const Container = styled.div`
   width: 20%;
   height: 100% !important;
   border-radius: 0rem;
-  background-color: #091322;
+  background-color: #000000;
   display: flex;
   flex-direction: column;
   align-items: center;

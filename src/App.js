@@ -46,7 +46,7 @@ function App() {
         <Route path="Thirdpg" element={<ThirdPg />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />
-        <Route path="/profile" element={<CustomerDb />}>
+        <Route path="/profile/*" element={<CustomerDb />}>
           <Route path='appointments' element={< Appointments />}></Route>
           <Route path='support' element={< Support />}></Route>
         </Route>

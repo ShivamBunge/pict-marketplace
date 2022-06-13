@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap');
 input{
     padding: 1px 20px;
-    background: #e6e4ff;
     border-radius: 6px;
+    width: 100%;
     border:solid grey 1px ;
 }
 h5{
@@ -17,21 +17,16 @@ p{
     justify-content: center;
     margin: auto;
     width: 80%;
+    padding: 1rem;
 }
 .txt-ar-box{
-    display: flex;
-    width: fit-content;
-    flex-direction: column;
+    width: 100%;
 }
 .text-ar{
     padding: 4px 10px;
     border-radius: 6px;
-    background: #e6e4ff;
     height: 30vh;
-    width: 50vw;
-    @media (max-width: 600px) {
-        width: 80vw;
-    }
+    width: 100%;
 }
 .wrapper {
     max-width: 700px;
@@ -40,19 +35,29 @@ p{
   grid-gap: 0rem;
   
   }
-  
+  @media (min-width: 600px) {
+    .wrapper { grid-template-columns: repeat(2, 1fr); }
+    
+}
+
 .links{
     text-decoration: none;
     color: azure;
 }
-  @media (min-width: 600px) {
-    .wrapper { grid-template-columns: repeat(2, 1fr); }
-    .seven{
-    grid-row: 4;
-    grid-column: 1 / 2;
+
+summary{
+    display: flex;
 }
-.p-info-tx {
-    grid-column: 1 / 2;
-    grid-row : 5 / 6;
-  }
+
+summary *{
+    margin: 5px;
 }
+
+summary img{
+    width:50px;
+}
+
+.meetlink a{
+    color: beige;
+}
+
