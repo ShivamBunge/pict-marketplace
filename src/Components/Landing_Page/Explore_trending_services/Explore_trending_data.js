@@ -70,6 +70,13 @@ const Explore_trending_data = [
     description:
       " Details about the titles. Lorem here Lorem here Custom Computer & Repair",
   },
+  {
+    id: 11,
+    title: "shivam",
+    url: "https://www.wanderon.in/triplist/manali-leh-manali/wanderon-ladakh-1.jpg",
+    description:
+      " Details about the titles. Lorem here Lorem here Custom Computer & Repair",
+  }
 ];
 
 export default Explore_trending_data;

@@ -7,16 +7,23 @@ import { useEffect } from "react";
 import { getAdditionalUserInfo } from "firebase/auth";
 
 function MainContent() {
-  const [data, setData] = useState({});
+  const [data, setData] = useState({});  //user data is stored here
   const [txt, setText] = useState("");
   const user = auth.currentUser;
 
-  useEffect(() => {
+  useEffect(() => {   //by default
     getInfo()
-  }, [])
-  useEffect(() => {
+    console.log("daata chafned")
+  },[])
+  useEffect(() => {     //when data changes
     console.log(data)
   }, [data])
+
+
+
+
+
+
   function getInfo() {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
@@ -36,13 +43,16 @@ function MainContent() {
     updateDoc(doc(db, "users", user.uid), {
       about: txt
     });
+    getInfo();
   }
+
+  //frontend 
   return (
     <Container>
       <div className="info">
         <div className="wrapper">
           <div className="one"><p>Username</p></div>
-          <div className="two"><p>{user.displayName}</p></div>
+          <div className="two"><p>{user.displayName}</p></div> {/* user.displayName is the username */}
           <div className="three"><p>Email</p></div>
           <div className="four"><p>{user.email}</p></div>
           <div className="five"><p>Phone  </p></div>
