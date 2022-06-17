@@ -38,10 +38,12 @@ function Sidebar() {
     updateDoc(doc(db, "users", user.uid), {
       img_url: profileImg
     });
+    getInfo();
   }
 
   const handleChange=(event)=>{
-    setProfileimg(event.target.value)
+    setProfileimg(event.target.value);
+    
   }
   return (
 

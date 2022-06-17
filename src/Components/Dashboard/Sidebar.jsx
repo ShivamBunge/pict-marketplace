@@ -1,4 +1,4 @@
-import React from "react";
+
 import styled from "styled-components";
 import { RiHomeLine, RiFileCopyLine } from "react-icons/ri";
 import { FaWallet } from "react-icons/fa";
@@ -10,14 +10,57 @@ import {
   Link
 } from 'react-router-dom';
 
+import { auth,db } from "../../firebase";
+import {React, useState } from "react";
+import { useEffect } from "react";
+import {  doc, setDoc,updateDoc,getDoc } from "firebase/firestore";
+
 function Sidebar() {
-  return (
+  const [data, setData] = useState({});
+  const user = auth.currentUser;
+
+  const [profileImg, setProfileimg]= useState("");
+  useEffect(() => {
+    getInfo()
+    console.log(data)
+  }, [])
+  useEffect(() => {
+    console.log(data)
+  }, [data])
+  function getInfo() {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setData(docSnap.data())
+        }
+        // console.log("the data is", docSnap.data())
+      }
+    });
+  }
+
+  
+  const saveImg=()=>{
+    updateDoc(doc(db, "users", user.uid), {
+      img_url: profileImg
+    });
+    getInfo();
+  }
+
+  const handleChange=(event)=>{
+    setProfileimg(event.target.value);
     
+  }
+
+  return (
+          
       <Container>
         <ProfileContainer>
-          <Avatar src={AvatarImage} />
-          <Name>Kishan Sheth</Name>
-          <button className="btn btn-secondary btn-sm">Change</button>
+          <Avatar src={data.img_url} />
+          <Name>{data.name}</Name>
+          <input type="text" onChange={handleChange} />
+          <button className="btn btn-secondary btn-sm" onClick={saveImg}>Change</button>
         </ProfileContainer>
         <ItemsContainer>
           <Items>
