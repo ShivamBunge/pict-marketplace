@@ -1,6 +1,6 @@
-import Explore_trending_services from "./Components/Landing_Page/Explore_trending_services/Explore_trending_services";
+// import Explore_trending_services from "./Components/Landing_Page/Explore_trending_services/Explore_trending_services";
 import Hero from "./Components/Landing_Page/Hero/Hero";
-import TopServices from "./Components/Landing_Page/TopServices/TopServices";
+// import TopServices from "./Components/Landing_Page/TopServices/TopServices";
 import Whyus from "./Components/Landing_Page/Whyus/Whyus";
 import { React, useEffect } from "react";
 import { doc, setDoc, getDoc } from "firebase/firestore";
@@ -32,9 +32,9 @@ const Layer = () => {
   return (
     <div>
       <Hero />
-      <Explore_trending_services />
+      {/* <Explore_trending_services /> */}
       <Whyus />
-      <TopServices />
+      {/* <TopServices /> */}
     </div>
   );
 };

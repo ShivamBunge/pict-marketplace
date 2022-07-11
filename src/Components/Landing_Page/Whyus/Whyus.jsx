@@ -5,7 +5,7 @@ const Whyus = () => {
   return (
     <div className="whyus-area">
       <div className="container">
-        <div className="Whyus-title">Why Us</div>
+        <div className="Whyus-title">About the Platform</div>
         <div className="whyus-body">
           <ul>
             <li>
