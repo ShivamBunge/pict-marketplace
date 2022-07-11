@@ -4,11 +4,12 @@ import Cardx from "./Cardx";
 const Marketplace = () => {
   return (
     <>
-      <h2 className="heading">Top Service Providers</h2>
+      <h2 className="heading">Explore Marketplace</h2>
       <div className="cardbox">
         {sData.map(function ncard(val) {
           //can use arrow function as well
           return (
+            
             <Cardx
               key={val.id}
               title={val.sname}
@@ -18,6 +19,10 @@ const Marketplace = () => {
           );
         })}
       </div>
+      {/* -------------- */}
+    
+     
+     
     </>
   );
 };
