@@ -3,7 +3,7 @@ const sData = [
     id: 1, // Each child in a list should have a unique "key" prop.
     sname: "Lisa ",
     imgsrc:
-      "https://imageio.forbes.com/blogs-images/allbusiness/files/2018/07/successful-entrepreneur-1200x800.jpg?format=jpg&width=1200",
+      "https://www.law.nyu.edu/sites/default/files/styles/full_width/public/Gallery_Faculty_Books_2019_001.jpg?itok=Iqn0zHgD",
     descrip: "(Masters in Finance) Financial Analyst, Fund Manager",
   },
   {
