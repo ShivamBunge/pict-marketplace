@@ -1,0 +1,37 @@
+.sell-card-deck{
+    display: flex;
+    width: 100%;
+}
+
+.sell-card{
+    margin: 15px;
+    padding:15px;
+    border: 2px solid rgb(23, 108, 219);
+    border-radius: 10px;
+    min-width:300px;
+}
+
+
+
+.sell-card-header{
+    border-bottom: 5px solid rgb(23, 108, 219) ;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: rgb(207, 203, 203);
+    text-align: center;
+}
+
+.sell-card-body div{
+    margin-top: 10px;
+}
+
+input, select {
+    width: 100%;
+}
+
+
+@media screen and (max-width: 1080px) {
+    .sell-card-deck{
+        flex-direction: column;
+    }
+}
