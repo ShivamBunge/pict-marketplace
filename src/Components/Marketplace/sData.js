@@ -2,6 +2,7 @@ const sData = [
   {
     id: 1, // Each child in a list should have a unique "key" prop.
     sname: "Lisa ",
+    category:"cs",
     imgsrc:
       "https://www.law.nyu.edu/sites/default/files/styles/full_width/public/Gallery_Faculty_Books_2019_001.jpg?itok=Iqn0zHgD",
     descrip: "(Masters in Finance) Financial Analyst, Fund Manager",
@@ -9,6 +10,8 @@ const sData = [
   {
     id: 2,
     sname: "Arnav Kumar",
+    category:"cs",
+
     imgsrc: "https://www.businessinsider.in/photo/69572469/Master.jpg",
     descrip: "(LLB, Symbiobis Pune) Advocate and Lawyer",
   },

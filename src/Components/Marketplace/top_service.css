@@ -10,6 +10,7 @@
   font-family: var(--Nunito);
 }
 .cardbox {
+  background-color: wheat;
   margin: auto;
   width: 80%;
   justify-content: center;
@@ -42,9 +43,10 @@
   --white-2: hsl(0, 0%, 80%);
   --dark: hsl(var(--hue), 25%, 10%);
   --grey: hsl(0, 0%, 50%);
-  width: 20rem;
+  width: 18rem;
   height: 30rem;
   margin: 3rem 2rem;
+  justify-self: center;
 }
 @media screen and (max-width: 700px) {
   .flip-card-container {

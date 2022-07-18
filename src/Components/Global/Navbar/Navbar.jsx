@@ -66,8 +66,7 @@ const Navb = () => {
             <Link className="links" to="/">Hello, {name} !</Link> : ""}
             <Link className="links" to="/marketplace">Explore</Link>
             {/* display if logged in */}
-            {signedup ? <> <Link className="links " to='/expertprofile'>Become A Consultant</Link>
-              <Link className="links" to='/profile'>Profile</Link>
+            {signedup ? <> <Link className="links " to='/expertprofile'>My Items</Link>
               <Button className="Buttons"  onClick={logout} >Logout</Button>
             </> :
               <>

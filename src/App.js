@@ -12,9 +12,6 @@ import Footer from "./Components/Global/Footer/Footer";
 
 import Login from "./Components/auth/Login/Login";
 import Signup from "./Components/auth/Signup/Signup";
-import CustomerDb from "./Components/CustomerDb/CustomerDb";
-import Appointments from "./Components/CustomerDb/Appointments";
-import Support from "./Components/CustomerDb/Support";
 import { auth } from "./firebase";
 import Marketplace from "./Components/Marketplace/TopServices";
 function App() {
@@ -45,11 +42,6 @@ function App() {
         <Route path="Thirdpg" element={<ThirdPg />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />
-        <Route path="/profile/*" element={<CustomerDb />}>
-          <Route path='appointments' element={< Appointments />}></Route>
-          <Route path='support' element={< Support />}></Route>
-        </Route>
-
 
       </Routes>
       <Footer />
