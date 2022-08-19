@@ -3,13 +3,12 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCxEZUhWaEk98pshjzlKZ24JmDKUFDKj14",
-  authDomain: "mentornow-b3064.firebaseapp.com",
-  projectId: "mentornow-b3064",
-  storageBucket: "mentornow-b3064.appspot.com",
-  messagingSenderId: "678738957678",
-  appId: "1:678738957678:web:244c43d4f1918fe7ffdd7f",
-  measurementId: "G-PV2ZS5PSET"
+  apiKey: "AIzaSyAiMaOGQecQFCPS5qs6TobekBH5wKDgkJc",
+  authDomain: "pict-marketplace.firebaseapp.com",
+  projectId: "pict-marketplace",
+  storageBucket: "pict-marketplace.appspot.com",
+  messagingSenderId: "359112371669",
+  appId: "1:359112371669:web:fa61ad7c6603a3c87f615c"
 };
 
 const app = initializeApp(firebaseConfig);

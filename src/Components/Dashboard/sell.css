@@ -11,7 +11,19 @@
     min-width:300px;
 }
 
+.confirm-btn{
+    display: flex;
+    margin-left: 60%;
+}
 
+.confirm-btn button{
+    background-color:rgb(233, 136, 91);
+
+}
+
+.confirm-btn button:hover{
+    background-color: rgb(69, 243, 141);
+}
 
 .sell-card-header{
     border-bottom: 5px solid rgb(23, 108, 219) ;
@@ -33,5 +45,10 @@ input, select {
 @media screen and (max-width: 1080px) {
     .sell-card-deck{
         flex-direction: column;
+    }
+
+    .confirm-btn{
+        margin-left:0;
+        justify-content: center;
     }
 }

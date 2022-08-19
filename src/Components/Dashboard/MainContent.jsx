@@ -3,20 +3,69 @@ import styled from "styled-components";
 import "./dashboard.css";
 import { doc, updateDoc, getDoc, where, collection, query, getDocs, setDoc, Firestore } from "firebase/firestore";
 import { React, useState,useEffect } from "react";
-
+import { createWorker } from "tesseract.js";
 
 
 function MainContent() {
+  const [selectedImg,setSelectedImg]=useState(null);
+  const [textResult,settextResult]=useState("");
+  const handleChangeImg = e =>{
+
+    setSelectedImg(e.target.files[0])
+  }
+
+  const worker = createWorker();
+
+  const convertImgToText= async ()=>{
+    await worker.load();
+    await worker.loadLanguage("eng");
+    await worker.initialize("eng");
+    const { data }=await worker.recognize(selectedImg);
+
+    const clg_id = data.text.search("2K");
+    // console.log(data.text.slice(clg_id+12,clg_id+24));
+    settextResult(data.text.slice(clg_id-1,clg_id+10));
+
+  }
+
+  useEffect(()=>{
+    convertImgToText();
+  },[selectedImg])
+
   const [data, setData] = useState({});  //user data is stored here
   const [txt, setText] = useState("");
   const [expData,setexpData]=useState({
     phone:"",
-    domain:"",
-    subdomain:"",
-    avg_time:"",
-    avg_fee:"",
+    clgID:"",
   });
+  const [verifyStatus,setVerify]=useState(false)
+
+
   const user = auth.currentUser;
+
+  const verifyAct=(e)=>{
+    console.log("verification in progress....")
+    var enteredID=expData.clgID;
+    console.log("a=",enteredID);
+    console.log("b=",textResult);
+
+    if(textResult.localeCompare(enteredID)==0){
+      console.log("verified");
+      document.getElementById("verify-id").innerHTML= "Account verified";
+
+      setVerify(true);
+
+      setexpData({
+        ...expData,
+        [e.target.clgID]: e.target.value
+      });
+    }
+    else{
+      console.log("not verified");
+      document.getElementById("verify-id").innerHTML= "Not verified";
+
+    }
+  }
 
   const updateField = e => {
     setexpData({
@@ -40,15 +89,12 @@ function MainContent() {
           setData(docSnap.data())
         }
         // console.log("the data is", docSnap.data())
-        const expRef = doc(db, 'experts', user.uid);
+        const expRef = doc(db, 'users', user.uid);
         const expSnap = await getDoc(expRef);
         setexpData({
           ...expData,
           phone:expSnap.data().phone,
-          domain:expSnap.data().domain,
-          subdomain:expSnap.data().subdomain,
-          avg_time:expSnap.data().avg_time,
-          avg_fee:expSnap.data().avg_fee
+          clgID:expSnap.data().clgID
         })
       }
     });
@@ -57,19 +103,17 @@ function MainContent() {
   
 const addExpertData=async()=>{
   try{
-    const expRef = doc(db, 'experts', user.uid);
+    const expRef = doc(db, 'users', user.uid);
     const expSnap = await getDoc(expRef);
     if(expSnap.exists()){
-      updateDoc(doc(db, "experts", user.uid), {
+      updateDoc(doc(db, "users", user.uid), {
         phone:expData.phone,
-        domain:expData.domain,
-        subdomain:expData.subdomain,
-        avg_time:expData.avg_time,
-        avg_fee:expData.avg_fee
+        clgID:expData.clgID,
+        verifyStatus:verifyStatus
       });
     }
     else{
-      await setDoc(expRef, { name: user.displayName , mail: user.email,phone:expData.phone,domain:expData.domain,subdomain:expData.subdomain,avg_time:expData.avg_time,avg_fee:expData.avg_fee });
+      await setDoc(expRef, { name: user.displayName , mail: user.email,phone:expData.phone,clgID:expData.clgID,verifyStatus:verifyStatus});
     }
     
     }
@@ -105,17 +149,43 @@ const addExpertData=async()=>{
           
           <div className="six"><p><input classNameName="p-info" name="phone" value={expData.phone} onChange={updateField} type={"text"} placeholder="+91" required /></p></div>
           
-       
-        
+          <div className="seven"><p >College Reg. ID. </p></div>
+          <div className="eigth"><p><input classNameName="clgID" name="clgID" onChange={updateField} type={"text"} required /></p></div>
+          
+          <label htmlFor="clgID-img">Upload College ID image: </label>
+          <input type="file" name="clgId-img" id="clgID-img" accept="image/*" onChange={handleChangeImg}/>
+          <div className="result" style={{"display":"grid"}}>
+            {selectedImg && (
+              <div className="box-image">
+                <img style={{"width":300}} src={URL.createObjectURL(selectedImg)} alt="thumb" />
+              </div>
+            )}
+            {textResult && (
+              <div>
+                  <div className="box-p" style={{"backgroundColor":"white"}}>
+                    <p>{textResult}</p>
+                  </div>
+                  
+                  <div className="verify-btn">
+                    <button type="submit" onClick={verifyAct}>Verify account</button>
+                  </div>
+              </div>
+            )}
+          </div>
+          <label htmlFor="clgID-img">(wait for few minutes after uploading image for image processing)</label>
+
+          <label htmlFor="verifyStatus">Account Verification Status: </label>
+          <div className="verifyStatus" id ="verify-id" >
+            not verified!
+          </div>
         </div>
       </div>
+      <button type="button" onClick={save} value={txt} class="btn btn-primary btn-sm">Save</button>
 
     </Container>
   );
 }
 export default MainContent;
-
-
 
 
 const Container = styled.div`

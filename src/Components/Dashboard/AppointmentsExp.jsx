@@ -43,7 +43,7 @@ const AppointmentsExp = () => {
 
     const itemEvent2 = () => {
 
-        var l1 = document.getElementById("itemName3").value
+        var l1 = document.getElementById("itemName2").value
         setItemName3(l1)
         
     }
@@ -99,8 +99,10 @@ const AppointmentsExp = () => {
     }
 
 
-    const confirmSlot = () => {
-        console.log(items)
+    const confirmItems = () => {
+        console.log(items);
+        console.log(items2);
+        console.log(items3);
     }
 
 
@@ -342,6 +344,9 @@ const AppointmentsExp = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="confirm-btn">
+                <button type="submit" onClick={confirmItems}>Confirm Items</button>
             </div>
         </Container>
     )
